@@ -1,0 +1,655 @@
+<title>Zunaira Javed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #eef0f3;
+    --paper: #f5f6f8;
+    --surface: #ffffff;
+    --surface-2: #e7e9ee;
+    --ink: #1b2028;
+    --ink-muted: #5b6472;
+    --ink-faint: #8891a0;
+    --border: #d6d9e0;
+    --border-strong: #b7bcc7;
+    --accent: #a6620c;
+    --accent-ink: #6f4308;
+    --accent-tint: #f4e3ce;
+    --pass: #2f8f5b;
+    --pass-tint: #dcefe3;
+    --shadow: 0 1px 2px rgba(27,32,40,0.06), 0 8px 24px rgba(27,32,40,0.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #14171d;
+      --paper: #191d24;
+      --surface: #1e232b;
+      --surface-2: #262c36;
+      --ink: #edeef1;
+      --ink-muted: #a2a9b6;
+      --ink-faint: #6d7583;
+      --border: #313846;
+      --border-strong: #414a5a;
+      --accent: #e0a339;
+      --accent-ink: #2a1c03;
+      --accent-tint: #3a2c14;
+      --pass: #4cb37f;
+      --pass-tint: #1c3327;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #14171d;
+    --paper: #191d24;
+    --surface: #1e232b;
+    --surface-2: #262c36;
+    --ink: #edeef1;
+    --ink-muted: #a2a9b6;
+    --ink-faint: #6d7583;
+    --border: #313846;
+    --border-strong: #414a5a;
+    --accent: #e0a339;
+    --accent-ink: #2a1c03;
+    --accent-tint: #3a2c14;
+    --pass: #4cb37f;
+    --pass-tint: #1c3327;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Public Sans", -apple-system, "Segoe UI", sans-serif;
+    line-height:1.6;
+    font-size:16px;
+  }
+  ::selection{ background:var(--accent-tint); color:var(--accent-ink); }
+
+  a{ color:inherit; }
+  .mono{ font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+  .sheet{
+    max-width:840px;
+    margin:0 auto;
+    padding: clamp(28px, 6vw, 64px) clamp(18px, 5vw, 40px) 80px;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    background:var(--paper);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding: clamp(24px,4vw,44px);
+    position:relative;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .masthead::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 16px 16px;
+    opacity:0.35;
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent 70%);
+            mask-image: linear-gradient(to bottom, black, transparent 70%);
+    pointer-events:none;
+  }
+  .masthead-inner{ position:relative; }
+
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:11.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 20px;
+  }
+  .eyebrow .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--pass);
+    box-shadow:0 0 0 3px var(--pass-tint);
+    flex:none;
+  }
+
+  .head-row{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+
+  h1.name{
+    font-family:"Big Shoulders Display", "Arial Narrow", sans-serif;
+    font-weight:900;
+    text-transform:uppercase;
+    font-size: clamp(2.6rem, 8vw, 4.6rem);
+    line-height:0.92;
+    letter-spacing:0.005em;
+    margin:0 0 10px;
+    text-wrap:balance;
+  }
+  .role-line{
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    color:var(--ink-muted);
+    font-weight:500;
+    margin:0 0 18px;
+    max-width:46ch;
+  }
+  .role-line strong{ color:var(--ink); font-weight:600; }
+
+  .stamp{
+    flex:none;
+    width:104px; height:104px;
+    border-radius:50%;
+    border:2px dashed var(--border-strong);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(-7deg);
+    color:var(--accent);
+    background:var(--surface);
+  }
+  .stamp-inner{ text-align:center; }
+  .stamp-initials{
+    font-family:"Big Shoulders Display", sans-serif;
+    font-weight:900;
+    font-size:2rem;
+    line-height:1;
+  }
+  .stamp-caption{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:8.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-top:2px;
+  }
+
+  .status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--pass-tint);
+    color:var(--pass);
+    border:1px solid color-mix(in srgb, var(--pass) 35%, transparent);
+    padding:6px 12px 6px 10px;
+    border-radius:999px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12.5px;
+    font-weight:500;
+    margin:0 8px 10px 0;
+  }
+  .status-pill .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--pass);
+  }
+  .status-pill.cert{
+    background:var(--accent-tint);
+    color:var(--accent-ink);
+    border-color:color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+  .status-pill.cert .dot{ background:var(--accent); }
+  .head-row > div{ margin-bottom:12px; }
+
+  .contact-row{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:22px;
+  }
+  .contact-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 16px;
+    border-radius:5px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    border:1px solid var(--border-strong);
+    color:var(--ink);
+    background:var(--surface);
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .contact-btn:hover{ border-color:var(--accent); }
+  .contact-btn:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .contact-btn.primary{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:var(--accent-ink);
+  }
+
+  /* ---------- Metrics ---------- */
+  .metrics{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
+    margin:28px 0 0;
+  }
+  .metric{
+    background:var(--surface);
+    padding:18px 16px;
+    text-align:left;
+  }
+  .metric-num{
+    font-family:"IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size:clamp(1.3rem,3vw,1.7rem);
+    font-weight:600;
+    color:var(--accent);
+    display:block;
+  }
+  .metric-label{
+    font-size:11.5px;
+    color:var(--ink-muted);
+    margin-top:4px;
+    line-height:1.35;
+  }
+
+  /* ---------- Sections ---------- */
+  section{ margin-top:56px; }
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:20px;
+  }
+  .sec-tag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    letter-spacing:0.08em;
+  }
+  h2{
+    font-family:"Big Shoulders Display", sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    font-size:1.5rem;
+    margin:0;
+    text-wrap:balance;
+  }
+  .sec-rule{
+    flex:1;
+    height:1px;
+    background:var(--border);
+    align-self:center;
+  }
+
+  .lede{
+    font-size:1.08rem;
+    color:var(--ink);
+    max-width:66ch;
+    margin:0 0 16px;
+  }
+  .lede strong{ color:var(--accent-ink); background:var(--accent-tint); padding:0 3px; border-radius:2px; }
+  p.body-text{
+    max-width:66ch;
+    color:var(--ink-muted);
+    margin:0 0 14px;
+  }
+
+  /* ---------- Release history ---------- */
+  .release{
+    border-left:2px solid var(--border);
+    padding-left:22px;
+    margin-left:6px;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+  }
+  .entry{ position:relative; }
+  .entry::before{
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:6px;
+    width:11px; height:11px;
+    border-radius:50%;
+    background:var(--surface);
+    border:2px solid var(--accent);
+  }
+  .entry:first-child::before{
+    background:var(--pass);
+    border-color:var(--pass);
+  }
+  .entry-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:10px 14px;
+    margin-bottom:4px;
+  }
+  .role-title{
+    font-weight:700;
+    font-size:1.08rem;
+  }
+  .entry-meta{
+    font-size:13px;
+    color:var(--ink-faint);
+    font-family:"IBM Plex Mono", monospace;
+    margin-bottom:10px;
+  }
+  .entry-meta .sep{ margin:0 6px; opacity:.5; }
+  .entry p{
+    color:var(--ink-muted);
+    max-width:64ch;
+    margin:0;
+    font-size:15px;
+  }
+
+  /* ---------- Coverage matrix ---------- */
+  .matrix{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+  @media (max-width:600px){ .matrix{ grid-template-columns:1fr; } }
+  .matrix-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:18px 18px 16px;
+  }
+  .matrix-title{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 12px;
+  }
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+  }
+  .chip{
+    font-size:12.5px;
+    padding:5px 10px;
+    border-radius:4px;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    color:var(--ink);
+    white-space:nowrap;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:64px;
+    padding-top:26px;
+    border-top:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .sig{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    line-height:1.6;
+  }
+  .sig b{ color:var(--ink-muted); }
+
+  @media (prefers-reduced-motion: no-preference){
+    .masthead{ animation: rise .5s ease both; }
+    .entry{ animation: rise .45s ease both; }
+    .entry:nth-child(1){ animation-delay:.02s; }
+    .entry:nth-child(2){ animation-delay:.06s; }
+    .entry:nth-child(3){ animation-delay:.10s; }
+    .entry:nth-child(4){ animation-delay:.14s; }
+    .entry:nth-child(5){ animation-delay:.18s; }
+    .entry:nth-child(6){ animation-delay:.22s; }
+  }
+  @keyframes rise{
+    from{ opacity:0; transform:translateY(6px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  @media (max-width:520px){
+    .metrics{ grid-template-columns:repeat(2,1fr); }
+    .stamp{ display:none; }
+  }
+</style>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="masthead-inner">
+      <p class="eyebrow"><span class="dot"></span>career_dossier.qa &nbsp;/&nbsp; karachi, pk &nbsp;/&nbsp; verified aug 2026</p>
+
+      <div class="head-row">
+        <div>
+          <span class="status-pill"><span class="dot"></span>Currently deployed — Principal QA Engineer, Simplified Global</span>
+          <span class="status-pill cert"><span class="dot"></span>MB-300 &amp; MB-330 — Microsoft Certified, Dynamics 365 SCM</span>
+          <h1 class="name">Zunaira<br>Javed</h1>
+          <p class="role-line">QA Leader specializing in <strong>Microsoft Dynamics 365 Finance &amp; Supply Chain</strong> — 9+ years turning "it should work" into verified, production-ready releases.</p>
+        </div>
+        <div class="stamp" aria-hidden="true">
+          <div class="stamp-inner">
+            <div class="stamp-initials">ZJ</div>
+            <div class="stamp-caption">QA&nbsp;Verified</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <a class="contact-btn primary" href="https://www.linkedin.com/in/zunaira-javed-/" target="_blank" rel="noopener">View LinkedIn ↗</a>
+        <a class="contact-btn" href="mailto:zunaira.javed2@outlook.com">zunaira.javed2@outlook.com</a>
+        <a class="contact-btn" href="tel:+923080437198">+92 308-0437198</a>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-num mono">9+</span>
+          <div class="metric-label">Years in QA</div>
+        </div>
+        <div class="metric">
+          <span class="metric-num mono">8+</span>
+          <div class="metric-label">Years in Dynamics 365 F&amp;O</div>
+        </div>
+        <div class="metric">
+          <span class="metric-num mono">7</span>
+          <div class="metric-label">Industries covered</div>
+        </div>
+        <div class="metric">
+          <span class="metric-num mono">1,200+</span>
+          <div class="metric-label">Test cases planned &amp; executed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-tag">00 — ABSTRACT</span>
+      <h2>Summary</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <p class="lede">I catch what breaks in Dynamics 365 F&amp;O <strong>before your customers do</strong> — leading QA teams through testing, defect tracking, and releases across retail, supply chain, and finance systems.</p>
+    <p class="body-text">I've tested systems across seven industries — retail, manufacturing, healthcare, fashion, stock exchange, financial services, and reinsurance. That range means I catch issues that QA engineers who only know one industry often miss.</p>
+    <p class="body-text">Technically, I run performance, functional, regression, smoke, integration, and API testing (including GraphQL and payload validation), using tools like Postman, Selenium, JMeter, JIRA, and Azure DevOps. I own the full defect lifecycle — reporting, triage, root cause analysis — and keep test plans and coverage clear for everyone involved, from developers to leadership.</p>
+    <p class="body-text">On the leadership side, I run QA teams across time zones, mentor new team members, and work closely with Product Managers, Business Analysts, and Developers from design through post-deployment. My focus isn't just finding bugs — it's building a quality-first culture that ships with confidence.</p>
+    <p class="body-text">Across my last three roles alone, that approach has cut defect leakage by 30%+, improved regression efficiency by 35%, and supported zero-critical-defect go-lives.</p>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-tag">01 — CAREER LOG</span>
+      <h2>Release History</h2>
+      <div class="sec-rule"></div>
+    </div>
+
+    <div class="release">
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="role-title">Principal QA Engineer</span>
+        </div>
+        <div class="entry-meta mono">Simplified Global<span class="sep">·</span>Dec 2025 – Present<span class="sep">·</span>Remote</div>
+        <p>Driving QA on Microsoft Dynamics 365 and Azure DevOps Server, current release in active development.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="role-title">QA Lead</span>
+        </div>
+        <div class="entry-meta mono">Vuori<span class="sep">·</span>Jan 2025 – Dec 2025<span class="sep">·</span>Remote</div>
+        <p>Planned and executed 400+ test cases across Dynamics 365, e-commerce, and WMS — spanning Order-to-Cash, Procure-to-Pay, Inventory-to-Deliver, and Plan-to-Produce — identifying 90+ defects and cutting UAT rework by 25%. Led a 5-person QA team through a full D365 version upgrade (1.0.0.38 → 1.0.0.45), reporting release readiness to stakeholders via ADO dashboards.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="role-title">Sr. QA Consultant</span>
+        </div>
+        <div class="entry-meta mono">Vitamin World (Freelance)<span class="sep">·</span>Aug 2022 – Aug 2024<span class="sep">·</span>Remote</div>
+        <p>Built and maintained a 300+ test case regression suite for D365 retail operations, achieving 99% mPOS transaction accuracy across 20+ stores. Verified store and online configuration, pricing/discount logic, DoorDash inventory integration, and end-to-end order flow from Salesforce Commerce Cloud to D365 — cutting client complaints 40% through proactive email-notification defect detection.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="role-title">Senior Functional &amp; QA Consultant</span>
+        </div>
+        <div class="entry-meta mono">Delcit Inc (Yasoob Consulting)<span class="sep">·</span>Jul 2020 – Jul 2022<span class="sep">·</span>Remote</div>
+        <p>Managed 500+ test cases in Azure DevOps for Microsoft D365 Supply Chain Management and Finance &amp; Operations, increasing coverage 35% and achieving defect-free go-lives through full-cycle system integration and end-to-end testing.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="role-title">Software QA Engineer II</span>
+        </div>
+        <div class="entry-meta mono">Matrix Systems Pvt Ltd<span class="sep">·</span>Dec 2018 – Aug 2020<span class="sep">·</span>Karachi, PK</div>
+        <p>Reduced defect leakage 40% through rigorous validation and retesting of critical production issues in the financial domain. Authored QA documentation — RTM, inspection logs, test cases — achieving 100% audit compliance.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="role-title">Software Quality Engineer</span>
+        </div>
+        <div class="entry-meta mono">Systems Limited<span class="sep">·</span>Oct 2015 – Mar 2018<span class="sep">·</span>Lahore, PK</div>
+        <p>Delivered the EdgeAX CommerceLink integration solution across Ecommerce (Magento, Demandware), ERP (AX2012, AX2007, D365), SharePoint, and Reinsurance systems for clients including Vitamin World and Mattress Firm Inc. Validated 2+ payment gateway integrations for 50K+ users with zero-downtime go-lives — full QA lifecycle ownership from requirements through production support.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Coverage matrix -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-tag">02 — COVERAGE</span>
+      <h2>Test Matrix</h2>
+      <div class="sec-rule"></div>
+    </div>
+
+    <div class="matrix">
+      <div class="matrix-card">
+        <p class="matrix-title">ERP &amp; Commerce Platforms</p>
+        <div class="chips">
+          <span class="chip">Dynamics 365 F&amp;O</span>
+          <span class="chip">Dynamics AX2012</span>
+          <span class="chip">Dynamics AX2007</span>
+          <span class="chip">Shopify</span>
+          <span class="chip">Magento</span>
+          <span class="chip">Salesforce Commerce Cloud</span>
+          <span class="chip">Koerber Edge WMS</span>
+          <span class="chip">ShipBob WMS</span>
+        </div>
+      </div>
+
+      <div class="matrix-card">
+        <p class="matrix-title">Testing Disciplines</p>
+        <div class="chips">
+          <span class="chip">Functional</span>
+          <span class="chip">Regression</span>
+          <span class="chip">Smoke</span>
+          <span class="chip">Integration</span>
+          <span class="chip">End-to-End</span>
+          <span class="chip">UAT / SIT</span>
+          <span class="chip">Performance</span>
+          <span class="chip">API (REST, GraphQL)</span>
+          <span class="chip">Mobile</span>
+        </div>
+      </div>
+
+      <div class="matrix-card">
+        <p class="matrix-title">Tools &amp; Infrastructure</p>
+        <div class="chips">
+          <span class="chip">JIRA</span>
+          <span class="chip">Azure DevOps</span>
+          <span class="chip">Postman</span>
+          <span class="chip">Jenkins</span>
+          <span class="chip">Selenium WebDriver</span>
+          <span class="chip">JMeter</span>
+          <span class="chip">Leapwork</span>
+          <span class="chip">Confluence</span>
+          <span class="chip">TFS</span>
+        </div>
+      </div>
+
+      <div class="matrix-card">
+        <p class="matrix-title">Practice &amp; Leadership</p>
+        <div class="chips">
+          <span class="chip">Agile / Kanban</span>
+          <span class="chip">Defect Lifecycle &amp; RCA</span>
+          <span class="chip">Team Mentorship</span>
+          <span class="chip">Test Planning &amp; Estimation</span>
+          <span class="chip">Cross-functional Collaboration</span>
+          <span class="chip">QA Process Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & education -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-tag">03 — CREDENTIALS</span>
+      <h2>Certifications &amp; Recognition</h2>
+      <div class="sec-rule"></div>
+    </div>
+
+    <div class="matrix">
+      <div class="matrix-card">
+        <p class="matrix-title">Certifications</p>
+        <p class="body-text" style="margin-bottom:8px;"><strong style="color:var(--ink);">MB-300 &amp; MB-330</strong> — Microsoft Certified: Dynamics 365 Supply Chain Management Functional Consultant Associate</p>
+        <p class="body-text" style="margin-bottom:0;"><strong style="color:var(--ink);">Claude 101</strong> — Anthropic, AI-assisted QA &amp; tooling</p>
+      </div>
+
+      <div class="matrix-card">
+        <p class="matrix-title">Recognition</p>
+        <p class="body-text" style="margin-bottom:8px;">Certificate of Appreciation, Systems Limited — for delivering the Vitamin World integration</p>
+        <p class="body-text" style="margin-bottom:0;">Employee of the Month, Systems Limited — Feb 2017</p>
+      </div>
+    </div>
+
+    <p class="body-text" style="margin-top:16px;"><span class="matrix-title" style="display:inline;">Education —</span> B.S. Computer Science (UET Lahore, 2011–2015)</p>
+  </section>
+
+  <footer>
+    <div class="sig">
+      <b>Zunaira Javed Iqbal</b> — Principal QA Engineer<br>
+      Karachi, Pakistan · Microsoft Certified (MB-300, MB-330)
+    </div>
+    <div class="contact-row" style="margin-top:0;">
+      <a class="contact-btn" href="mailto:zunaira.javed2@outlook.com">Email</a>
+      <a class="contact-btn primary" href="https://www.linkedin.com/in/zunaira-javed-/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </footer>
+
+</div>
