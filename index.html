@@ -130,11 +130,13 @@
     font-family:"Big Shoulders Display", "Arial Narrow", sans-serif;
     font-weight:900;
     text-transform:uppercase;
-    font-size: clamp(2.6rem, 8vw, 4.6rem);
+    font-size: clamp(1.8rem, 6vw, 4.6rem);
     line-height:0.92;
     letter-spacing:0.005em;
     margin:0 0 10px;
-    text-wrap:balance;
+    text-align:center;
+    width:100%;
+    white-space:nowrap;
   }
   .role-line{
     font-size: clamp(1.05rem, 2.4vw, 1.25rem);
@@ -295,6 +297,7 @@
     margin:0 0 16px;
   }
   .lede strong{ color:var(--accent-ink); background:var(--accent-tint); padding:0 3px; border-radius:2px; }
+  .hl{ color:var(--accent-ink); background:var(--accent-tint); padding:0 4px; border-radius:2px; font-weight:600; white-space:nowrap; }
   p.body-text{
     max-width:66ch;
     color:var(--ink-muted);
@@ -460,7 +463,7 @@
         <div>
           <span class="status-pill"><span class="dot"></span>Currently deployed — Principal QA Engineer, Simplified Global</span>
           <span class="status-pill cert"><span class="dot"></span>MB-300 &amp; MB-330 — Microsoft Certified, Dynamics 365 SCM</span>
-          <h1 class="name">Zunaira<br>Javed</h1>
+          <h1 class="name">Zunaira Javed</h1>
           <p class="role-line">QA Leader specializing in <strong>Microsoft Dynamics 365 Finance &amp; Supply Chain</strong> — 9+ years turning "it should work" into verified, production-ready releases.</p>
         </div>
         <div class="stamp" aria-hidden="true">
@@ -473,8 +476,8 @@
 
       <div class="contact-row">
         <a class="contact-btn primary" href="https://www.linkedin.com/in/zunaira-javed-/" target="_blank" rel="noopener">View LinkedIn ↗</a>
-        <a class="contact-btn" href="mailto:zunaira.javed2@outlook.com">zunaira.javed2@outlook.com</a>
-        <a class="contact-btn" href="tel:+923080437198">+92 308-0437198</a>
+        <span class="contact-btn">zunaira.javed2@outlook.com</span>
+        <span class="contact-btn">+92 308-0437198</span>
       </div>
 
       <div class="metrics">
@@ -507,9 +510,9 @@
     </div>
     <p class="lede">I catch what breaks in Dynamics 365 F&amp;O <strong>before your customers do</strong> — leading QA teams through testing, defect tracking, and releases across retail, supply chain, and finance systems.</p>
     <p class="body-text">I've tested systems across seven industries — retail, manufacturing, healthcare, fashion, stock exchange, financial services, and reinsurance. That range means I catch issues that QA engineers who only know one industry often miss.</p>
-    <p class="body-text">Technically, I run performance, functional, regression, smoke, integration, and API testing (including GraphQL and payload validation), using tools like Postman, Selenium, JMeter, JIRA, and Azure DevOps. I own the full defect lifecycle — reporting, triage, root cause analysis — and keep test plans and coverage clear for everyone involved, from developers to leadership.</p>
+    <p class="body-text">Technically, I run performance, functional, regression, smoke, integration, and <span class="hl">API testing</span> (including GraphQL and payload validation), using tools like <span class="hl">Postman</span>, <span class="hl">Selenium</span>, <span class="hl">JMeter</span>, <span class="hl">JIRA</span>, and <span class="hl">Azure DevOps</span>. I own the full defect lifecycle — reporting, triage, root cause analysis — and keep test plans and coverage clear for everyone involved, from developers to leadership.</p>
     <p class="body-text">On the leadership side, I run QA teams across time zones, mentor new team members, and work closely with Product Managers, Business Analysts, and Developers from design through post-deployment. My focus isn't just finding bugs — it's building a quality-first culture that ships with confidence.</p>
-    <p class="body-text">Across my last three roles alone, that approach has cut defect leakage by 30%+, improved regression efficiency by 35%, and supported zero-critical-defect go-lives.</p>
+    <p class="body-text">Across my last three roles alone, that approach has cut defect leakage by <span class="hl">30%+</span>, improved regression efficiency by <span class="hl">35%</span>, and supported <span class="hl">zero-critical-defect go-lives</span>.</p>
   </section>
 
   <!-- Experience -->
@@ -528,8 +531,11 @@
         </div>
         <div class="entry-meta mono">Simplified Global<span class="sep">·</span>Dec 2025 – Present<span class="sep">·</span>Remote</div>
         <ul>
-          <li>Driving QA on Microsoft Dynamics 365 and Azure DevOps Server</li>
-          <li>Current release in active development</li>
+          <li>Testing a full-stack enterprise application built on Angular, .NET, and Microsoft Dynamics 365</li>
+          <li>Applying prompt engineering and AI agent workflows across Claude, ChatGPT, and GitHub Copilot to accelerate test design, automation, and documentation</li>
+          <li>Using Claude Cowork to author test cases, execute them directly in Azure DevOps, and auto-generate test summary reports from the execution data</li>
+          <li>Using Claude Cowork to automate time logging for the Nexus project in Kimai</li>
+          <li>Driving QA process and release management on Azure DevOps Server</li>
         </ul>
       </div>
 
@@ -539,10 +545,9 @@
         </div>
         <div class="entry-meta mono">Vuori<span class="sep">·</span>Jan 2025 – Dec 2025<span class="sep">·</span>Remote</div>
         <ul>
-          <li>Planned and executed 400+ test cases across Dynamics 365, e-commerce, and WMS — spanning Order-to-Cash, Procure-to-Pay, Inventory-to-Deliver, and Plan-to-Produce</li>
-          <li>Identified 90+ defects and cut UAT rework by 25%</li>
-          <li>Led a 5-person QA team through a full D365 version upgrade (1.0.0.38 → 1.0.0.45)</li>
-          <li>Reported release readiness to stakeholders via ADO dashboards</li>
+          <li>Owned test planning and execution for Dynamics 365, e-commerce, and WMS releases across Order-to-Cash, Procure-to-Pay, Inventory-to-Deliver, and Plan-to-Produce — 400+ test cases run per cycle</li>
+          <li>Cut UAT rework 25% by catching 90+ defects earlier in SIT, before they reached user testing</li>
+          <li>Led a 5-person QA team through a full D365 version upgrade (1.0.0.38 → 1.0.0.45), reporting release readiness via Azure DevOps dashboards</li>
         </ul>
       </div>
 
@@ -552,11 +557,9 @@
         </div>
         <div class="entry-meta mono">Vitamin World (Freelance)<span class="sep">·</span>Aug 2022 – Aug 2024<span class="sep">·</span>Remote</div>
         <ul>
-          <li>Built and maintained a 300+ test case regression suite for D365 retail operations</li>
-          <li>Achieved 99% mPOS transaction accuracy across 20+ stores</li>
-          <li>Verified store/online configuration, pricing &amp; discount logic, and DoorDash inventory integration</li>
-          <li>Tested end-to-end order flow from Salesforce Commerce Cloud to D365</li>
-          <li>Cut client complaints 40% through proactive email-notification defect detection</li>
+          <li>Maintained a 300+ test case regression suite for D365 retail operations, covering store/online configuration, pricing &amp; discount logic, and DoorDash inventory integration</li>
+          <li>Validated end-to-end order flow from Salesforce Commerce Cloud to D365, holding mPOS transaction accuracy at 99% across 20+ stores</li>
+          <li>Cut client complaints 40% by catching email-notification defects before they reached customers</li>
         </ul>
       </div>
 
@@ -566,9 +569,8 @@
         </div>
         <div class="entry-meta mono">Delcit Inc (Yasoob Consulting)<span class="sep">·</span>Jul 2020 – Jul 2022<span class="sep">·</span>Remote</div>
         <ul>
-          <li>Managed 500+ test cases in Azure DevOps for Microsoft D365 Supply Chain Management and Finance &amp; Operations</li>
-          <li>Increased test coverage by 35%</li>
-          <li>Achieved defect-free go-lives through full-cycle system integration and end-to-end testing</li>
+          <li>Built and managed 500+ test cases in Azure DevOps for Microsoft D365 Supply Chain Management and Finance &amp; Operations, increasing regression coverage 35%</li>
+          <li>Ran full-cycle system integration and end-to-end testing that delivered defect-free go-lives on every release in this engagement</li>
         </ul>
       </div>
 
@@ -578,8 +580,8 @@
         </div>
         <div class="entry-meta mono">Matrix Systems Pvt Ltd<span class="sep">·</span>Dec 2018 – Aug 2020<span class="sep">·</span>Karachi, PK</div>
         <ul>
-          <li>Reduced defect leakage 40% through rigorous validation and retesting of critical production issues in the financial domain</li>
-          <li>Authored QA documentation — RTM, inspection logs, test cases — achieving 100% audit compliance</li>
+          <li>Cut defect leakage 40% through rigorous validation and retesting of critical production issues in the financial domain</li>
+          <li>Brought QA documentation — RTM, inspection logs, test cases — to 100% audit compliance</li>
         </ul>
       </div>
 
@@ -589,9 +591,8 @@
         </div>
         <div class="entry-meta mono">Systems Limited<span class="sep">·</span>Oct 2015 – Mar 2018<span class="sep">·</span>Lahore, PK</div>
         <ul>
-          <li>Delivered the EdgeAX CommerceLink integration solution across Ecommerce (Magento, Demandware), ERP (AX2012, AX2007, D365), SharePoint, and Reinsurance systems</li>
-          <li>Supported clients including Vitamin World and Mattress Firm Inc.</li>
-          <li>Validated 2+ payment gateway integrations for 50K+ users with zero-downtime go-lives</li>
+          <li>Delivered the EdgeAX CommerceLink integration solution across Ecommerce (Magento, Demandware), ERP (AX2012, AX2007, D365), SharePoint, and Reinsurance systems for clients including Vitamin World and Mattress Firm Inc.</li>
+          <li>Validated 2+ payment gateway integrations, including USAePay, supporting 50K+ users with zero-downtime go-lives</li>
           <li>Owned full QA lifecycle from requirements through production support</li>
         </ul>
       </div>
@@ -644,11 +645,13 @@
           <span class="chip">Azure DevOps</span>
           <span class="chip">Postman</span>
           <span class="chip">Jenkins</span>
-          <span class="chip">Selenium WebDriver</span>
+          <span class="chip">Selenium WebDriver (Java)</span>
+          <span class="chip">Playwright (Java)</span>
           <span class="chip">JMeter</span>
           <span class="chip">Leapwork</span>
           <span class="chip">Confluence</span>
           <span class="chip">TFS</span>
+          <span class="chip">Figma</span>
         </div>
       </div>
 
@@ -661,6 +664,19 @@
           <span class="chip">Test Planning &amp; Estimation</span>
           <span class="chip">Cross-functional Collaboration</span>
           <span class="chip">QA Process Design</span>
+        </div>
+      </div>
+
+      <div class="matrix-card">
+        <p class="matrix-title">AI-Augmented QA</p>
+        <p class="body-text" style="margin:0 0 12px; font-size:13.5px;">I use Claude Cowork to write and execute test cases directly in Azure DevOps, auto-generate test summary reports, and automate time logging — turning hours of manual QA admin into minutes.</p>
+        <div class="chips">
+          <span class="chip">Prompt Engineering</span>
+          <span class="chip">Claude &amp; Claude Cowork</span>
+          <span class="chip">ChatGPT</span>
+          <span class="chip">GitHub Copilot</span>
+          <span class="chip">AI Agent Workflows</span>
+          <span class="chip">Kimai (Time Tracking)</span>
         </div>
       </div>
     </div>
@@ -677,7 +693,7 @@
     <div class="matrix">
       <div class="matrix-card">
         <p class="matrix-title">Certifications</p>
-        <p class="body-text" style="margin-bottom:8px;"><strong style="color:var(--ink);">MB-300 &amp; MB-330</strong> — Microsoft Certified: Dynamics 365 Supply Chain Management Functional Consultant Associate</p>
+        <p class="body-text" style="margin-bottom:8px;"><span class="hl">MB-300 &amp; MB-330</span> — Microsoft Certified: Dynamics 365 Supply Chain Management Functional Consultant Associate</p>
         <p class="body-text" style="margin-bottom:0;"><strong style="color:var(--ink);">Claude 101</strong> — Anthropic, AI-assisted QA &amp; tooling</p>
       </div>
 
@@ -697,7 +713,7 @@
       Karachi, Pakistan · Microsoft Certified (MB-300, MB-330)
     </div>
     <div class="contact-row" style="margin-top:0;">
-      <a class="contact-btn" href="mailto:zunaira.javed2@outlook.com">Email</a>
+      <span class="contact-btn">zunaira.javed2@outlook.com</span>
       <a class="contact-btn primary" href="https://www.linkedin.com/in/zunaira-javed-/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
   </footer>
